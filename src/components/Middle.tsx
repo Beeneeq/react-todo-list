@@ -1,8 +1,22 @@
 import React from 'react'
+import TodoItem from './TodoItem'
+import './Middle.scss'
 
-const Middle = () => {
+interface propsType {
+  todos: Array<any>
+}
+
+const Middle = ({todos}:propsType) => {
+  const TodoList: any = todos.map((todo) => {
+    return <TodoItem text={todo.text} isChecked={todo.isChecked} id={todo.id}/>
+  })
+  
   return (
-    <div>Middle</div>
+    <div>
+      <ul className='todo-list'>
+        {TodoList}
+      </ul>
+    </div>
   )
 }
 
