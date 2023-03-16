@@ -48,13 +48,32 @@ table {
 	border-spacing: 0;
 }
 
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
 .App {
-  width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
   height: calc(100vh - 60px);
   margin: 30px auto;
   padding: 40px;
-  border: 1px solid #ccc;
+  background: #f9f9f9;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .App {
+    display: block;
+  }
 }
 
 // box model

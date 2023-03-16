@@ -13,7 +13,7 @@ const Top = () => {
   const date: string = dateList[now.getDay()];
 
   return (
-    <div className="flex2">
+    <div className="day-wrap flex2">
         <div className='flex'>
             <h1 className="day">{day}</h1>
             <div>

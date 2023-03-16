@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import Bottom from './components/Bottom';
 import Middle from './components/Middle';
 import Top from './components/Top';
 
@@ -7,25 +8,26 @@ import Top from './components/Top';
 function App() {
   const todos: any = [
     {
-      text: 'ss',
-      id: '1',
-      isChecked: false
+      text: 'sssssssssssssss',
+      id: 1,
+      done: false
     },
     {
-      text: 'ss',
-      id: '2',
-      isChecked: false
+      text: 'ssssss',
+      id: 2,
+      done: false
     },
     {
-      text: 'ss',
-      id: '3',
-      isChecked: false
+      text: 'sssssssssss',
+      id: 3,
+      done: false
     },
   ]
   return (
     <div className="App">
       <Top/>
       <Middle todos={todos}/>
+      <Bottom/>
     </div>
   );
 }

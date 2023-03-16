@@ -1,0 +1,121 @@
+.bottom-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    padding: 0;
+    background-color: #eee;
+    border-radius: 80px 80px 0 0;
+    transition: all .75s ease;
+    z-index: 1;
+    box-sizing: border-box;
+
+    &.on {
+        height: 320px;
+        padding: 100px;        
+
+        & + .dim-bg {
+            position: absolute;
+            inset: 0;
+            background-color: #000;
+            opacity: .6;
+            visibility: visible;
+        }
+
+        & .inp-add, & .btn-add {
+            display: block;
+        }
+    }
+
+    & + .dim-bg {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity visibility .75s ease;
+    }
+
+
+    .btn-plus {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background-color: #5B74F6;
+        border-radius: 50%;
+        border: none;
+        top: -60px;
+        left: calc(50% - 60px);
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 30px);
+            left: calc(50% - 2px);
+            width: 4px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: #fff;
+        }
+
+        &::after {
+            top: calc(50% - 2px);
+            left: calc(50% - 30px);
+            width: 60px;
+            height: 4px;
+        }
+    }
+
+    .inp-add, .btn-add {
+        display: none;
+        width: 100%;
+        height: 70px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 14px;
+        font-size: 40px;
+        box-sizing: border-box;
+    }
+
+    .btn-add {
+        margin-top: 30px;
+        background-color: #5B74F6;
+        color: #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-wrap {
+        height: 70px;
+        
+        &.on {
+            height: 180px;
+            padding: 50px 50px 30px; 
+        }
+
+        .btn-plus {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: calc(50% - 30px);
+    
+            &::before, &::after {
+                top: calc(50% - 15px);
+                left: calc(50% - 1px);
+                width: 2px;
+                height: 30px;
+            }
+    
+            &::after {
+                top: calc(50% - 1px);
+                left: calc(50% - 15px);
+                width: 30px;
+                height: 2px;
+            }
+        }
+
+        .inp-add, .btn-add {
+            height: 35px;
+            padding: 0 10px;
+            font-size: 20px;;
+        }
+    }
+  }

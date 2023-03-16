@@ -12,11 +12,9 @@ const Middle = ({todos}:propsType) => {
   })
   
   return (
-    <div>
-      <ul className='todo-list'>
-        {TodoList}
-      </ul>
-    </div>
+    <ul className='todo-list'>
+      {TodoList}
+    </ul>
   )
 }
 
