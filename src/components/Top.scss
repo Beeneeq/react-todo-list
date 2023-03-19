@@ -5,6 +5,12 @@
     max-width: 500px;
 }
 
+@media (max-width: 768px) {
+    .day-wrap {
+        width: 100%;
+    }  
+}
+
 .day {
     font-family: 'Oswald', sans-serif;
     margin-right: 15px;

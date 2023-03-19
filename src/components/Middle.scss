@@ -13,49 +13,25 @@
     font-size: 24px;
     margin-bottom: 40px;
 
-    input {
-        position: absolute;
-        outline: none;
-        border: none;
-        background: transparent;
-        appearance: none;
-
-        & + label {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            border: 1px solid #333;
-            border-radius: 50%;
-            transition: all .5 ease;
-
-            &::before, &::after {
-                content: '';
-                position: absolute;
-                width: 2px;
-                height: 10px;
-                top: 11px;
-                left: 11px;
-                border-radius: 10px;
-                transform: rotate(-45deg);
-                background-color: #333;
-                transition: all .5 ease;
-            }
-
-            &::after {
-                top: 7px;
-                left: 18px;
-                height: 14px;
-                transform: rotate(40deg);
-            }
-        }
+    .btn-check {
+        width: 30px;
+        height: 30px;
+        padding-top: 2px;
+        border: 1px solid #000;
+        border-radius: 50%;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    input[checked=checked] + label {
-        background: #5B74F6;
-        border: none;
-        
-        &::before, &::after {
-            background-color: #fff;
+    &.done {
+        text-decoration: line-through;
+        color: #ccc;
+        .btn-check {
+            background-color: #466acd;
+            border-color: #466acd;
+            svg {
+                color: #fff;
+            }
         }
     }
 }

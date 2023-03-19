@@ -1,21 +1,23 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 import './Middle.scss'
+import { useTodoState } from '../contexts/TodosContext'
 
-interface propsType {
-  todos: Array<any>
-}
-
-const Middle = ({todos}:propsType) => {
-  const TodoList: any = todos.map((todo) => {
-    return <TodoItem text={todo.text} isChecked={todo.isChecked} id={todo.id}/>
-  })
+const Middle = () => {  
+  const todos: any = useTodoState();
   
   return (
     <ul className='todo-list'>
-      {TodoList}
+        {todos.map((todo: any) => (
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            text={todo.text}
+            done={todo.done}
+          />
+        ))}
     </ul>
   )
 }
 
-export default Middle
+export default React.memo(Middle)

@@ -1,19 +1,19 @@
 import React from 'react'
+import { Todo, useTodoDispatch } from '../contexts/TodosContext'
+import { MdDone } from 'react-icons/md';
 
-interface propsType {
-    text: string,
-    isChecked: boolean,
-    id: string
-}
+const TodoItem = ({text, done, id}: Todo) => {  
+  const dispatch: any = useTodoDispatch();
+  const onToggle = () => dispatch({ type: 'TOGGLE', id });
 
-const TodoItem = ({text, isChecked, id}:propsType) => {
   return (
-    <li className='flex2 todo-item' key={id}>
+    <li className={done ? 'flex2 todo-item done' : 'flex2 todo-item'} key={id}>
         {text}
-        <input type="checkbox" id={id} checked={isChecked}/>
-        <label htmlFor={id}><span className='blind'>체크하기</span></label>
+        <div className='btn-check' onClick={onToggle}>
+          <MdDone/>
+        </div>
     </li>
   )
 }
 
-export default TodoItem
+export default React.memo(TodoItem);
