@@ -3,11 +3,14 @@
 .day-wrap {
     width: 50%;
     max-width: 500px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
 }
 
 @media (max-width: 768px) {
     .day-wrap {
         width: 100%;
+        max-width: 768px;
     }  
 }
 
@@ -24,4 +27,17 @@
 .year {
     margin-top: 20px;
     color: #777;
+}
+
+.btn-mode {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 70px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
 }

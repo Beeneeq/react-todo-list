@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import Bottom from './components/Bottom';
 import Middle from './components/Middle';
@@ -7,10 +7,12 @@ import { TodoProvider } from './contexts/TodosContext';
 
 
 function App() {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+
   return (
-    <div className="App">
+    <div className="App" data-dark={darkMode}>
       <TodoProvider>
-        <Top/>
+        <Top darkMode={darkMode} setDarkMode={setDarkMode}/>
         <Middle/>
         <Bottom/>
       </TodoProvider>

@@ -68,6 +68,7 @@ table {
   padding: 40px;
   background: #f9f9f9;
   box-sizing: border-box;
+  transition: all .5s ease;
 }
 
 @media (max-width: 768px) {
@@ -102,4 +103,45 @@ table {
 
 .flex3 {
   justify-content: space-around;
+}
+
+
+// Dark theme
+
+.App[data-dark="true"] {
+  background: #333;
+
+  .day, .month, .date {
+    color: #fff;
+  }
+
+  .btn-mode {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .todo-item {
+    color: #fff;
+
+    &.done {
+      color: #888;
+    }
+  }
+
+  .btn-check {
+    background-color: #fff;
+    border-color: #fff;
+
+    svg {
+      color: #333;
+    }
+  }
+
+  .bottom-wrap {
+    background-color: #999;
+
+    .btn-plus {
+      background-color: #666;
+    }
+  }
 }
