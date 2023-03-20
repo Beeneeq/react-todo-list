@@ -35,6 +35,20 @@
             }
         }
     }
+
+    .btn-del {
+        // visibility: hidden;
+        // opacity: 0;
+
+        &.on {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        svg {
+            color: #ccc !important
+        }
+    }
 }
 
 @media (max-width: 768px) {
